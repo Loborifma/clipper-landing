@@ -50,7 +50,7 @@ export default function Footer() {
             <p className="text-white/60 mb-6">
               Turn your long-form videos into engaging vertical content for all social platforms.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
                 <a 
                   key={index}
@@ -61,7 +61,7 @@ export default function Footer() {
                   {link.icon}
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
           
           <div>

@@ -15,7 +15,7 @@ const pricingPlans = [
       "Standard support",
       "Single platform export format"
     ],
-    buttonText: "Get Started",
+    buttonText: "Join Waitlist",
     buttonVariant: "outline",
     popular: false
   },
@@ -33,7 +33,7 @@ const pricingPlans = [
       "Custom branded intros/outros",
       "Team collaboration features"
     ],
-    buttonText: "Go Pro",
+    buttonText: "Join Waitlist",
     buttonVariant: "default",
     popular: true
   }
@@ -50,9 +50,12 @@ export default function Pricing() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
+          <div className="inline-flex items-center px-4 py-2 bg-gray-100 rounded-full text-sm font-medium mb-4">
+            <span>Planned Pricing</span>
+          </div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple, Transparent Pricing</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Choose the perfect plan for your content creation needs
+            Our planned pricing tiers when we launch. Join the waitlist to be notified!
           </p>
         </motion.div>
         
@@ -90,33 +93,18 @@ export default function Pricing() {
                   ))}
                 </ul>
                 
-                <Button 
-                  className={`w-full ${plan.popular 
-                    ? 'bg-primary hover:bg-primary/90 text-white' 
-                    : 'bg-transparent hover:bg-gray-100 border border-gray-300 text-gray-800'}`}
-                  size="lg"
-                >
-                  {plan.buttonText}
-                </Button>
+                <a href="#get-started">
+                  <Button 
+                    variant={plan.buttonVariant === 'outline' ? 'outline' : 'default'} 
+                    className="w-full"
+                  >
+                    {plan.buttonText}
+                  </Button>
+                </a>
               </div>
             </motion.div>
           ))}
         </div>
-        
-        <motion.div 
-          className="mt-10 text-center text-muted-foreground"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <p>
-            Need a custom plan for your team?{" "}
-            <a href="#" className="text-primary hover:underline">
-              Contact us
-            </a>
-          </p>
-        </motion.div>
       </div>
     </section>
   );

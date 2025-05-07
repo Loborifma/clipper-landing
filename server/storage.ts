@@ -44,9 +44,10 @@ export class DatabaseStorage implements IStorage {
     try {
       const [newSubscription] = await db.insert(subscriptions).values(subscription).returning();
       return newSubscription;
-    } catch (error) {
+    } catch (err) {
+      const error = err as Error;
       // Handle unique constraint violation
-      if (error.message?.includes('unique constraint')) {
+      if (error.message && error.message.includes('unique constraint')) {
         // Email already exists, return existing subscription
         const [existingSubscription] = await db.select().from(subscriptions).where(eq(subscriptions.email, subscription.email));
         return existingSubscription;

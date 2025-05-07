@@ -69,18 +69,6 @@ export default function Examples() {
             </motion.div>
           ))}
         </div>
-        
-        <div className="mt-12 text-center">
-          <motion.a 
-            href="#"
-            className="inline-flex items-center text-primary font-semibold hover:underline"
-            whileHover={{ x: 5 }}
-            transition={{ duration: 0.2 }}
-          >
-            Browse more examples
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </motion.a>
-        </div>
       </div>
     </section>
   );

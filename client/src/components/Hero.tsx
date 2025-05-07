@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, Clock } from 'lucide-react';
 import EmailCaptureForm from './EmailCaptureForm';
 
 export default function Hero() {
@@ -32,6 +32,14 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
           >
+            <motion.div
+              className="inline-flex items-center px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4"
+              variants={itemVariants}
+            >
+              <Clock className="w-4 h-4 mr-2" />
+              <span>Coming Soon</span>
+            </motion.div>
+            
             <motion.h1 
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
               variants={itemVariants}
@@ -43,7 +51,7 @@ export default function Hero() {
               className="text-lg md:text-xl text-muted-foreground mb-6 md:mb-8 max-w-xl"
               variants={itemVariants}
             >
-              Instantly create perfectly-sized vertical videos for TikTok, Instagram and YouTube Shorts with our AI-powered editor.
+              Our AI-powered editor will help you create perfectly-sized vertical videos for TikTok, Instagram and YouTube Shorts. Join the waitlist to get early access!
             </motion.p>
             
             <motion.div 
@@ -59,7 +67,10 @@ export default function Hero() {
               variants={itemVariants}
               className="mb-10"
             >
-              <EmailCaptureForm />
+              <EmailCaptureForm 
+                buttonText="Join Waitlist"
+                buttonClassName="bg-[#FF6B6B] hover:bg-[#FF6B6B]/90 text-white font-semibold px-6 py-3 rounded-lg"
+              />
             </motion.div>
             
             <motion.div 
@@ -68,11 +79,11 @@ export default function Hero() {
             >
               <div className="flex items-center">
                 <Check className="text-[#32D4A4] mr-2 h-5 w-5" />
-                <span>No credit card required</span>
+                <span>Be first to know when we launch</span>
               </div>
               <div className="flex items-center">
                 <Check className="text-[#32D4A4] mr-2 h-5 w-5" />
-                <span>Cancel anytime</span>
+                <span>Early access to the platform</span>
               </div>
             </motion.div>
           </motion.div>

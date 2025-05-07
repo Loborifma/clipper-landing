@@ -95,20 +95,14 @@ export default function Features() {
             <motion.div 
               key={index}
               variants={itemVariants}
-              className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300"
-              whileHover={{ y: -8 }}
+              className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all"
+              whileHover={{ y: -10 }}
             >
               <div className={`w-14 h-14 rounded-full ${feature.bgColor} flex items-center justify-center mb-6`}>
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
               <p className="text-muted-foreground mb-4">{feature.description}</p>
-              <div className="flex items-center text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                <span>Learn more</span>
-                <svg className="h-4 w-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </div>
             </motion.div>
           ))}
         </motion.div>
