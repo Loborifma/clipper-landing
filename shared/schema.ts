@@ -17,11 +17,13 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export const subscriptions = pgTable("subscriptions", {
   id: serial("id").primaryKey(),
   email: text("email").notNull().unique(),
+  source: text("source").default("landing_page"),
   createdAt: timestamp("created_at").defaultNow(),
 });
 
 export const subscribeSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
+  source: z.string().optional(),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
