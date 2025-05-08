@@ -92,15 +92,6 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                
-                <a href="#get-started">
-                  <Button 
-                    variant={plan.buttonVariant === 'outline' ? 'outline' : 'default'} 
-                    className="w-full"
-                  >
-                    {plan.buttonText}
-                  </Button>
-                </a>
               </div>
             </motion.div>
           ))}

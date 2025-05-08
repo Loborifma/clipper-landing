@@ -1,25 +1,31 @@
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { Wand2, Palette, Download, Twitch, Instagram, Youtube } from 'lucide-react';
+import { Wand2, Palette, Download, Twitch, Instagram, Youtube, Calendar, Share2 } from 'lucide-react';
 
 const featureCards = [
   {
     icon: <Wand2 className="text-primary text-xl" />,
-    title: "AI-Powered Auto-Clipping",
-    description: "Our AI identifies the most engaging moments from your long videos and automatically reformats them for vertical viewing.",
+    title: "Set-and-Forget AI Clipping",
+    description: "Upload once and walk away. Our AI automatically identifies the most engaging moments from your videos and transforms them into attention-grabbing vertical content.",
     bgColor: "bg-primary/10"
   },
   {
     icon: <Palette className="text-[#FF6B6B] text-xl" />,
-    title: "Customizable Style Presets",
-    description: "Apply beautiful filters, text overlays, and branded intros/outros that match your style and increase engagement.",
+    title: "Automatic Style Enhancement",
+    description: "Your personal AI editor applies your chosen style presets, captions, and branding to every clip - zero effort required for a consistent, professional look.",
     bgColor: "bg-[#FF6B6B]/10"
   },
   {
-    icon: <Download className="text-[#32D4A4] text-xl" />,
-    title: "One-Click Export",
-    description: "Export your finished vertical videos with a single click. Optimized formats for TikTok, Instagram Reels, and YouTube Shorts.",
+    icon: <Calendar className="text-[#32D4A4] text-xl" />,
+    title: "Smart Content Scheduling",
+    description: "Plan your video releases in advance. Schedule daily, weekly, or monthly posts automatically to maintain a consistent presence while you focus on other things.",
     bgColor: "bg-[#32D4A4]/10"
+  },
+  {
+    icon: <Share2 className="text-[#FFA41B] text-xl" />,
+    title: "Hands-free Publishing",
+    description: "Publish directly to your favorite platforms - YouTube, TikTok, Instagram Reels - without lifting a finger. Build your audience while you sleep.",
+    bgColor: "bg-[#FFA41B]/10"
   }
 ];
 
@@ -80,8 +86,8 @@ export default function Features() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How Video Cliper Works</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Transform your long-form videos into engaging social content with just a few clicks.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">The Ultimate Passive Video System</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Build a consistent social media presence while you sleep. Video Cliper's automation turns your long-form content into a steady stream of engaging shorts - no daily work required.</p>
         </motion.div>
         
         <motion.div 
@@ -89,7 +95,7 @@ export default function Features() {
           variants={containerVariants}
           initial="hidden"
           animate={controls}
-          className="grid md:grid-cols-3 gap-8 md:gap-10"
+          className="grid md:grid-cols-2 gap-8 md:gap-10"
         >
           {featureCards.map((feature, index) => (
             <motion.div 
@@ -116,8 +122,8 @@ export default function Features() {
         >
           <div className="grid md:grid-cols-2 items-center">
             <div className="p-6 md:p-10">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">Perfect for Every Platform</h3>
-              <p className="text-muted-foreground mb-6">Video Cliper automatically optimizes your content for each platform's specific requirements, ensuring maximum engagement and reach.</p>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">Effortless Multi-Platform Growth</h3>
+              <p className="text-muted-foreground mb-6">Without any manual adjustments, Video Cliper automatically optimizes each clip for every platform's unique requirements. Gain followers on all major platforms simultaneously with zero extra work.</p>
               
               <div className="space-y-4">
                 {platforms.map((platform, index) => (
