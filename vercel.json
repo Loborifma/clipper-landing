@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "client": {
+      "rootDirectory": "client",
+      "buildCommand": "npm install && npm run build",
+      "outputDirectory": "dist"
+    },
+    "api": {
+      "rootDirectory": "server",
+      "buildCommand": "npm install",
+      "routes": [
+        { "src": "/api/(.*)", "dest": "server/$1.js" }
+      ]
+    }
+  }
+}
