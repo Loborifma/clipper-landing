@@ -30,8 +30,9 @@ const pricingPlans = [
       "Advanced filters and text overlays",
       "Priority support",
       "Multi-platform optimized exports",
-      "Custom branded intros/outros",
-      "Team collaboration features"
+      "Schedule video posting"
+      // "Custom branded intros/outros",
+      // "Team collaboration features"
     ],
     buttonText: "Join Waitlist",
     buttonVariant: "default",
@@ -69,11 +70,11 @@ export default function Pricing() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {plan.popular && (
+              {/* {plan.popular && (
                 <div className="bg-primary text-white text-center py-2 text-sm font-medium">
-                  Most Popular
+                  For creators
                 </div>
-              )}
+              )} */}
               
               <div className="p-6 md:p-8">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>

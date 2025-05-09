@@ -69,7 +69,7 @@ export default function Features() {
   };
   
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 0 },
     visible: { 
       opacity: 1, 
       y: 0,
@@ -102,7 +102,7 @@ export default function Features() {
               key={index}
               variants={itemVariants}
               className="group bg-white p-6 md:p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all"
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -20 }}
             >
               <div className={`w-14 h-14 rounded-full ${feature.bgColor} flex items-center justify-center mb-6`}>
                 {feature.icon}
