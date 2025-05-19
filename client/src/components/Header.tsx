@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { X, Menu, Film } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { X, Menu, Film } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,16 +11,17 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Features', href: '#features' },
-    { name: 'Examples', href: '#examples' },
+    { name: "Описание", href: "#hero" },
+    { name: "Функции", href: "#features" },
+    { name: "Цены", href: "#pricing" },
+    // { name: "Examples", href: "#examples" },
     // { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Pricing', href: '#pricing' }
   ];
 
   return (
@@ -29,7 +30,9 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 py-4 transition-all duration-300 ${
-        isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        isScrolled && !mobileMenuOpen
+          ? "bg-white/90 backdrop-blur-sm shadow-sm"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
@@ -39,26 +42,26 @@ export default function Header() {
           </div>
           <span className="font-bold text-xl">Video Cliper</span>
         </a>
-        
+
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <a 
+            <a
               key={link.name}
-              href={link.href} 
+              href={link.href}
               className="font-medium text-muted-foreground hover:text-primary transition-colors"
             >
               {link.name}
             </a>
           ))}
         </div>
-        
+
         <a href="#get-started" className="hidden md:block">
           <Button className="bg-primary hover:bg-primary/90 text-white font-medium rounded-full">
-            Get Started
+            Присоединиться
           </Button>
         </a>
-        
-        <button 
+
+        <button
           className="md:hidden text-muted-foreground"
           aria-label="Menu"
           onClick={() => setMobileMenuOpen(true)}
@@ -84,7 +87,7 @@ export default function Header() {
                 </div>
                 <span className="font-bold text-xl">Video Cliper</span>
               </a>
-              <button 
+              <button
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
               >
@@ -102,12 +105,9 @@ export default function Header() {
                   {link.name}
                 </a>
               ))}
-              <a 
-                href="#get-started" 
-                onClick={() => setMobileMenuOpen(false)}
-              >
+              <a href="#get-started" onClick={() => setMobileMenuOpen(false)}>
                 <Button className="w-full bg-primary hover:bg-primary/90 text-white font-medium rounded-full">
-                  Get Started
+                  Присоединится
                 </Button>
               </a>
             </div>
