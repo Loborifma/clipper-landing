@@ -1,5 +1,10 @@
 import { Film } from "lucide-react";
 import { FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
+import { PrivacyModal } from "./PrivacyModal";
+import { AgreementModal } from "./AgreementModal";
+import { Modal } from "./ui/Modal";
+import { EMAIL } from "@/lib/consts";
+import { Logo } from "./ui/logo";
 
 const currentYear = new Date().getFullYear();
 
@@ -29,10 +34,10 @@ export default function Footer() {
     ],
     legal: [
       { name: "Политика конфиденциальности", href: "#" },
-      { name: "Условия", href: "#" },
+      { name: "Пользовательское соглашение", href: "#" },
       { name: "Контакты", href: "https://t.me/Rwuet" },
     ],
-  };
+  } as const;
 
   const socialLinks = [
     { icon: <FaTwitter size={18} />, href: "#" },
@@ -46,10 +51,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-20">
           <div className="md:justify-self-start">
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-primary">
-                <Film className="h-5 w-5" />
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center p-1.5">
+                <Logo className="text-white" />
               </div>
-              <span className="font-bold text-xl">Video Cliper</span>
+              <span className="font-bold text-xl text-white">
+                Video Clipper
+              </span>
             </div>
             <p className="text-white/60 mb-6 md:max-w-[250px]">
               Шаблоны и умный планировщик публикаций берут монтаж на себя — вам
@@ -117,18 +124,60 @@ export default function Footer() {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/60 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} Video Cliper. All rights reserved.
+            &copy; {currentYear} Video Clipper. Все права защищены.
           </p>
           <div className="flex space-x-6 text-sm">
-            {footerLinks.legal.map((link, index) => (
-              <a
-                key={index}
-                href={link.href}
-                className="text-white/60 hover:text-white transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+            {footerLinks.legal.map((link, index) => {
+              if (link.name === "Политика конфиденциальности") {
+                return (
+                  <PrivacyModal
+                    key={link.name}
+                    slotTrigerButton={
+                      <span className="text-white/60 hover:text-white transition-colors">
+                        {link.name}
+                      </span>
+                    }
+                  />
+                );
+              }
+              if (link.name === "Пользовательское соглашение") {
+                return (
+                  <AgreementModal
+                    key={link.name}
+                    slotTrigerButton={
+                      <span className="text-white/60 hover:text-white transition-colors">
+                        {link.name}
+                      </span>
+                    }
+                  />
+                );
+              }
+
+              return (
+                <Modal
+                  key={link.name}
+                  slotTrigerButton={
+                    <span className="text-white/60 hover:text-white transition-colors">
+                      {link.name}
+                    </span>
+                  }
+                  title={link.name}
+                  contentClassName="max-w-xl"
+                  content={
+                    <div className="space-y-2">
+                      <div>
+                        <strong className="text-gray-800">Email:</strong>{" "}
+                        {EMAIL}
+                      </div>
+                      <div>
+                        <strong className="text-gray-800">Сайт:</strong>{" "}
+                        clipper-landing.onrender.com
+                      </div>
+                    </div>
+                  }
+                />
+              );
+            })}
           </div>
         </div>
       </div>

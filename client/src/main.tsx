@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./index.css";
 
-import featureImage from "./components/ui/feature.png";
+import logo from "./public/logo.png";
 
 // Add custom meta tags for SEO
 const meta = document.createElement("meta");
@@ -20,7 +20,7 @@ document.head.appendChild(title);
 const icon = document.createElement("link");
 icon.rel = "icon";
 icon.type = "image/png";
-icon.href = featureImage;
+icon.href = logo;
 document.head.appendChild(icon);
 
 createRoot(document.getElementById("root")!).render(<App />);

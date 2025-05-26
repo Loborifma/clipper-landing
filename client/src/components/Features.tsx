@@ -3,7 +3,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import { Wand2, Palette, Calendar, Share2 } from "lucide-react";
 import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import { MdCopyAll, MdMusicNote } from "react-icons/md";
-import featureImage from "./ui/feature.png";
+import featureImage from "../public/feature.png";
 
 const featureCards = [
   {

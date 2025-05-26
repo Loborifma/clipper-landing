@@ -107,7 +107,7 @@ export default function Hero() {
                 className="rounded-2xl shadow-xl w-full"
               />
               <div className="absolute -bottom-5 -right-5 bg-white p-2 rounded-xl shadow-lg">
-                <div className="bg-[#32D4A4] text-white p-2 rounded-lg flex items-center">
+                <div className="bg-gradient-to-r from-teal-500 to-cyan-600 text-white p-2 rounded-lg flex items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 mr-2"

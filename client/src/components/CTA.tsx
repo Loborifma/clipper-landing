@@ -30,11 +30,14 @@ export default function CTA() {
             уведомление о запуске!
           </p>
 
-          <div className="max-w-md mx-auto mb-8">
+          <div className="flex justify-center mx-auto mb-8">
             <EmailCaptureForm
               buttonText="Уведомить"
+              formClassName="flex flex-col justify-center sm:flex-row gap-3 w-full "
               buttonClassName="bg-white text-primary font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors"
-              inputClassName="w-full px-4 py-3 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-white/30"
+              inputClassName="w-full px-4 py-3 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-white/30 text-stone=950"
+              policyClassName="text-white underline underline-offset-2 hover:text-blue-100 transition-colors font-medium"
+              variant="black"
             />
           </div>
 

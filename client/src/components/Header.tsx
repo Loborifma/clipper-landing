@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { X, Menu, Film } from "lucide-react";
+import { Logo } from "./ui/logo";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,10 +38,10 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
         <a href="#" className="flex items-center space-x-2">
-          <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-white">
-            <Film className="h-5 w-5" />
+          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-1.5">
+            <Logo className="text-white" />
           </div>
-          <span className="font-bold text-xl">Video Cliper</span>
+          <span className="font-bold text-xl">Video Clipper</span>
         </a>
 
         <div className="hidden md:flex items-center space-x-8">
