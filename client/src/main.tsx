@@ -8,7 +8,7 @@ import logo from "./public/logo.png";
 const meta = document.createElement("meta");
 meta.name = "description";
 meta.content =
-  "Video Cliper helps social media managers, influencers, and small business owners instantly create perfectly-sized vertical videos for Instagram, TikTok, YouTube Shorts by reformatting long-form videos.";
+  "Video Cliper helps social media managers, influencers, and small business owners instantly create perfectly-sized vertical videos for Instagram*, TikTok, YouTube Shorts by reformatting long-form videos.";
 document.head.appendChild(meta);
 
 // Add title

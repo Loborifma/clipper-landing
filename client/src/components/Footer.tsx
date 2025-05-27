@@ -48,6 +48,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#27282B] text-white pt-16 pb-10">
       <div className="container mx-auto px-4 md:px-8">
+        <div className="mb-8 text-white/60">* - запрещенна в РФ</div>
         <div className="grid md:grid-cols-3 gap-20">
           <div className="md:justify-self-start">
             <div className="flex items-center space-x-2 mb-6">
