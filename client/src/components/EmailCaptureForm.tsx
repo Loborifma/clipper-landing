@@ -103,7 +103,7 @@ export default function EmailCaptureForm({
             <PrivacyModal
               slotTrigerButton={
                 <span className={policyClassName}>
-                  политикой конфиденциальности
+                  политика обработки персональных данных
                 </span>
               }
             />

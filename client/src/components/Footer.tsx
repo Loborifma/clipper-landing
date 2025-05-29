@@ -33,7 +33,7 @@ export default function Footer() {
       { name: "Terms of Service", href: "#" },
     ],
     legal: [
-      { name: "Политика конфиденциальности", href: "#" },
+      { name: "Политика обработки персональных данных", href: "#" },
       { name: "Пользовательское соглашение", href: "#" },
       { name: "Контакты", href: "https://t.me/Rwuet" },
     ],
@@ -129,7 +129,7 @@ export default function Footer() {
           </p>
           <div className="flex space-x-6 text-sm">
             {footerLinks.legal.map((link, index) => {
-              if (link.name === "Политика конфиденциальности") {
+              if (link.name === "Политика обработки персональных данных") {
                 return (
                   <PrivacyModal
                     key={link.name}
